@@ -42,7 +42,5 @@ jobs:
                 -otp-${{steps.setup-beam.outputs.otp-version}}\
                 -rebar3-${{steps.setup-beam.outputs.rebar3-version}}\
                 -hash-${{hashFiles('rebar.lock')}}"
-      - name: set env var
-        run: export ERL_FLAGS="-args_file config/vm.args"
       - name: Run test
-        run: rebar3 eunit
+        run: ERL_FLAGS="-args_file config\vm.args" rebar3 eunit
