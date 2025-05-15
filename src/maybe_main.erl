@@ -4,4 +4,9 @@
 
 -export([foo/0]).
 
-foo( ) -> maybe 1 else _ -> 2 end .
+foo() ->
+    maybe 
+        2 ?= 1 + 1
+    else
+        _ -> ok
+    end.
