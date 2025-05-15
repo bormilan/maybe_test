@@ -43,4 +43,4 @@ jobs:
                 -rebar3-${{steps.setup-beam.outputs.rebar3-version}}\
                 -hash-${{hashFiles('rebar.lock')}}"
       - name: Run test
-        run: rebar3 eunit ERL_FLAGS="-args_file config/vm.args"
+        run: ERL_FLAGS="-args_file config/vm.args" rebar3 eunit
