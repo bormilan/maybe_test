@@ -5,7 +5,7 @@
 -export([foo/0]).
 
 foo() ->
-    maybe 
+    maybe
         2 ?= 1 + 1
     else
         _ -> ok
